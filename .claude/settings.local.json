@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --no-src-dir --import-alias \"@/*\" --yes)",
+      "Bash(mv /Users/nateelive/Documents/new-company/ics-website/README.MD /tmp/ics-README.MD)",
+      "Bash(npx create-next-app@latest /Users/nateelive/Documents/new-company/ics-website --typescript --tailwind --eslint --app --no-src-dir --import-alias \"@/*\" --yes)",
+      "Bash(mkdir -p /tmp/ics-temp)",
+      "Read(//tmp/**)",
+      "Bash(npm install:*)",
+      "Bash(npx prisma:*)",
+      "Bash(npx tsc:*)",
+      "Bash(node /Users/nateelive/Documents/new-company/ics-website/node_modules/typescript/bin/tsc --version)",
+      "Bash(node /Users/nateelive/Documents/new-company/ics-website/node_modules/typescript/bin/tsc --noEmit)",
+      "Bash(npm run:*)",
+      "Bash(node /Users/nateelive/Documents/new-company/ics-website/node_modules/next/dist/server/lib/start-server.js --version)",
+      "Bash(node /Users/nateelive/Documents/new-company/ics-website/node_modules/next/dist/bin/next --version)",
+      "Bash(node /Users/nateelive/Documents/new-company/ics-website/node_modules/next/dist/bin/next build)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000)",
+      "Bash(pkill -f \"next dev\")",
+      "Bash(node -e \"const c = require\\(''@prisma/client''\\); console.log\\(Object.keys\\(c\\).slice\\(0,10\\)\\)\")"
+    ]
+  }
+}
