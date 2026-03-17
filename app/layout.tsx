@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import LiveChat from "@/components/LiveChat";
+import ScrollAnimator from "@/components/ScrollAnimator";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -36,6 +38,8 @@ export default function RootLayout({
         <Navbar />
         <main>{children}</main>
         <Footer />
+        <LiveChat />
+        <ScrollAnimator />
       </body>
     </html>
   );

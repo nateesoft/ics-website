@@ -58,3 +58,24 @@ a, button {
   background-color: #1877f2;
   color: white;
 }
+
+/* Scroll animations — initial state is set by JS to avoid SSR flash */
+[data-animate].anim-pending {
+  opacity: 0;
+}
+[data-animate="fade-up"].anim-pending    { transform: translateY(36px); }
+[data-animate="fade-down"].anim-pending  { transform: translateY(-24px); }
+[data-animate="fade-left"].anim-pending  { transform: translateX(-36px); }
+[data-animate="fade-right"].anim-pending { transform: translateX(36px); }
+[data-animate="zoom-in"].anim-pending    { transform: scale(0.9); }
+
+[data-animate].anim-pending,
+[data-animate].anim-in {
+  transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+[data-animate].anim-in {
+  opacity: 1;
+  transform: none;
+}

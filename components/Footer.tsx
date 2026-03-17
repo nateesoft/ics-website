@@ -127,10 +127,10 @@ export default function Footer() {
                   />
                 </svg>
                 <a
-                  href="mailto:info@ics.co.th"
+                  href="mailto:sales.ics9.service@gmail.com"
                   className="text-[#b0b3b8] text-sm hover:text-[#1877f2] transition-colors duration-200"
                 >
-                  info@ics.co.th
+                  sales.ics9.service@gmail.com
                 </a>
               </li>
               <li className="flex items-center gap-2">
@@ -151,7 +151,7 @@ export default function Footer() {
                   href="tel:+6620001234"
                   className="text-[#b0b3b8] text-sm hover:text-[#1877f2] transition-colors duration-200"
                 >
-                  02-000-1234
+                  02-1166615
                 </a>
               </li>
             </ul>

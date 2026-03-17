@@ -21,7 +21,7 @@ const contactInfo = [
       </svg>
     ),
     label: "โทรศัพท์",
-    value: "02-000-1234",
+    value: "02-1166615",
     link: "tel:+6620001234",
     sub: "จ–ศ 9:00–18:00",
   },
@@ -32,8 +32,8 @@ const contactInfo = [
       </svg>
     ),
     label: "อีเมล",
-    value: "info@ics.co.th",
-    link: "mailto:info@ics.co.th",
+    value: "sales.ics9.service@gmail.com",
+    link: "mailto:sales.ics9.service@gmail.com",
     sub: "ตอบกลับภายใน 24 ชั่วโมง",
   },
   {
@@ -44,7 +44,7 @@ const contactInfo = [
       </svg>
     ),
     label: "ที่อยู่",
-    value: "กรุงเทพมหานคร",
+    value: "101/122 ม.2 ถ.กาญจนาภิเษก ต.บางคูเวียง อ.บางกรวย จ.นนทบุรี 11130",
     link: null,
     sub: "ให้บริการทั่วกรุงเทพฯ และปริมณฑล",
   },
@@ -55,8 +55,8 @@ const contactInfo = [
       </svg>
     ),
     label: "LINE Official",
-    value: "@ics-th",
-    link: "https://line.me/ti/p/@ics-th",
+    value: "@261madsf",
+    link: "https://line.me/ti/p/@261madsf",
     sub: "พิมพ์ได้เลย ตอบไว",
   },
 ];
@@ -134,7 +134,7 @@ export default function ContactPage() {
       {/* Hero */}
       <section className="pt-32 pb-16 bg-[#f5f5f7]">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="max-w-2xl">
+          <div className="max-w-2xl" data-animate="fade-up">
             <p className="text-[#0071e3] text-sm font-semibold tracking-widest uppercase mb-4">
               Contact Us
             </p>
@@ -165,10 +165,12 @@ export default function ContactPage() {
               </p>
 
               <div className="flex flex-col gap-4 mb-10">
-                {contactInfo.map((info) => (
+                {contactInfo.map((info, i) => (
                   <div
                     key={info.label}
                     className="flex items-start gap-4 p-4 rounded-2xl bg-[#f5f5f7] hover:bg-gray-100 transition-colors duration-200"
+                    data-animate="fade-left"
+                    data-delay={String(i * 80)}
                   >
                     <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center text-[#1d1d1f] shadow-sm flex-shrink-0">
                       {info.icon}
@@ -196,7 +198,7 @@ export default function ContactPage() {
               </div>
 
               {/* Business Hours */}
-              <div className="bg-[#1d1d1f] rounded-2xl p-6 text-white">
+              <div className="bg-[#1d1d1f] rounded-2xl p-6 text-white" data-animate="fade-up" data-delay="320">
                 <h3 className="font-semibold mb-4">เวลาทำการ</h3>
                 <div className="flex flex-col gap-2">
                   {[
@@ -225,7 +227,7 @@ export default function ContactPage() {
             </div>
 
             {/* Contact Form */}
-            <div className="lg:col-span-3">
+            <div className="lg:col-span-3" data-animate="fade-right" data-delay="100">
               <div className="bg-white rounded-3xl border border-gray-200 p-8 md:p-10">
                 <h2 className="text-xl font-bold text-[#1d1d1f] mb-2">
                   ส่งข้อความถึงเรา
@@ -282,7 +284,7 @@ export default function ContactPage() {
                           required
                           value={form.name}
                           onChange={handleChange}
-                          placeholder="สมชาย รัตนวงศ์"
+                          placeholder="กรุณากรอกชื่อ-นามสกุล"
                           className={inputClass}
                         />
                       </div>
@@ -300,7 +302,7 @@ export default function ContactPage() {
                           required
                           value={form.email}
                           onChange={handleChange}
-                          placeholder="somchai@company.com"
+                          placeholder="xxxx@gmail.com"
                           className={inputClass}
                         />
                       </div>

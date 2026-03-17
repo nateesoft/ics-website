@@ -111,7 +111,7 @@ const products = [
     name: "Printer & Scanner",
     nameEn: "Office Equipment",
     description: "เครื่องพิมพ์และสแกนเนอร์ระดับองค์กร รองรับปริมาณงานสูงและเชื่อมต่อเครือข่าย",
-    image: "https://images.unsplash.com/photo-1612291198750-9b0ac13bd85e?w=480&h=320&fit=crop&auto=format",
+    image: "https://images.unsplash.com/photo-1562077981-4d7eafd44932?w=480&h=320&fit=crop&auto=format",
     badge: "New",
     badgeColor: "bg-orange-500",
     href: "/services#support",
@@ -298,13 +298,6 @@ export default function HomePage() {
               ปรึกษาฟรี
             </Link>
           </div>
-
-          <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
-            <span className="text-white/50 text-xs tracking-widest uppercase">Scroll</span>
-            <svg className="w-4 h-4 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-            </svg>
-          </div>
         </div>
       </section>
 
@@ -312,8 +305,8 @@ export default function HomePage() {
       <section className="bg-[#1c1e21] py-16">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat) => (
-              <div key={stat.value} className="text-center">
+            {stats.map((stat, i) => (
+              <div key={stat.value} className="text-center" data-animate="fade-up" data-delay={String(i * 100)}>
                 <div className="text-4xl md:text-5xl font-bold text-[#1877f2] mb-2">{stat.value}</div>
                 <div className="text-white/60 text-sm">{stat.label}</div>
                 <div className="text-white/30 text-xs mt-0.5">{stat.labelEn}</div>
@@ -326,7 +319,7 @@ export default function HomePage() {
       {/* Products Showcase */}
       <section className="py-24 bg-white">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center max-w-2xl mx-auto mb-14">
+          <div className="text-center max-w-2xl mx-auto mb-14" data-animate="fade-up">
             <p className="text-[#1877f2] text-sm font-semibold tracking-widest uppercase mb-3">Our Products</p>
             <h2 className="text-4xl md:text-5xl font-bold text-[#1c1e21] leading-tight tracking-tight mb-4">
               สินค้าและอุปกรณ์
@@ -339,11 +332,13 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {products.map((product) => (
+            {products.map((product, i) => (
               <Link
                 key={product.id}
                 href={product.href}
                 className="group bg-[#f0f2f5] rounded-2xl overflow-hidden border border-[#dde0e4] hover:border-[#1877f2]/40 hover:shadow-xl hover:shadow-blue-50 transition-all duration-300"
+                data-animate="fade-up"
+                data-delay={String(i * 80)}
               >
                 {/* Image */}
                 <div className="relative overflow-hidden h-48">
@@ -381,7 +376,7 @@ export default function HomePage() {
       {/* Services Overview */}
       <section className="py-24 bg-[#f0f2f5]">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="max-w-2xl mb-14">
+          <div className="max-w-2xl mb-14" data-animate="fade-up">
             <p className="text-[#1877f2] text-sm font-semibold tracking-widest uppercase mb-3">Our Services</p>
             <h2 className="text-4xl md:text-5xl font-bold text-[#1c1e21] leading-tight tracking-tight mb-4">
               บริการครบวงจร
@@ -394,8 +389,10 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {services.map((service) => (
-              <ServiceCard key={service.id} {...service} />
+            {services.map((service, i) => (
+              <div key={service.id} data-animate="fade-up" data-delay={String((i % 3) * 80)}>
+                <ServiceCard {...service} />
+              </div>
             ))}
           </div>
 
@@ -416,7 +413,7 @@ export default function HomePage() {
       {/* Featured Services with Images */}
       <section className="py-24 bg-white">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center max-w-2xl mx-auto mb-16">
+          <div className="text-center max-w-2xl mx-auto mb-16" data-animate="fade-up">
             <p className="text-[#1877f2] text-sm font-semibold tracking-widest uppercase mb-3">Highlight Services</p>
             <h2 className="text-4xl md:text-5xl font-bold text-[#1c1e21] leading-tight tracking-tight mb-4">
               บริการเด่น
@@ -435,7 +432,7 @@ export default function HomePage() {
                 className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${service.imageLeft ? "lg:flex lg:flex-row-reverse" : ""}`}
               >
                 {/* Text */}
-                <div className={service.imageLeft ? "lg:pl-4" : "lg:pr-4"}>
+                <div className={service.imageLeft ? "lg:pl-4" : "lg:pr-4"} data-animate={service.imageLeft ? "fade-right" : "fade-left"}>
                   <span className="inline-block text-[#1877f2] text-xs font-bold tracking-widest uppercase bg-[#e7f3ff] px-3 py-1 rounded-full mb-4">
                     {service.label}
                   </span>
@@ -467,7 +464,7 @@ export default function HomePage() {
                 </div>
 
                 {/* Image */}
-                <div className={`relative ${service.imageLeft ? "lg:order-first" : ""}`}>
+                <div className={`relative ${service.imageLeft ? "lg:order-first" : ""}`} data-animate={service.imageLeft ? "fade-left" : "fade-right"} data-delay="100">
                   <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-blue-100">
                     <img
                       src={service.image}
@@ -555,10 +552,12 @@ export default function HomePage() {
                   title: "คุ้มค่า",
                   desc: "ราคาโปร่งใส ไม่มีค่าใช้จ่ายซ่อนเร้น",
                 },
-              ].map((item) => (
+              ].map((item, i) => (
                 <div
                   key={item.title}
                   className="bg-white rounded-2xl p-6 border border-[#dde0e4] hover:border-[#1877f2]/30 hover:shadow-md hover:shadow-blue-50 transition-all duration-200"
+                  data-animate="fade-up"
+                  data-delay={String(i * 90)}
                 >
                   <div className="w-10 h-10 bg-[#e7f3ff] rounded-xl flex items-center justify-center text-[#1877f2] mb-4">
                     {item.icon}
@@ -588,10 +587,12 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {testimonials.map((t) => (
+            {testimonials.map((t, i) => (
               <div
                 key={t.id}
                 className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/8 hover:border-white/20 transition-all duration-200 flex flex-col"
+                data-animate="fade-up"
+                data-delay={String((i % 3) * 80)}
               >
                 {/* Stars */}
                 <StarRating count={t.rating} />

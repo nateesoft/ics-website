@@ -52,41 +52,23 @@ const values = [
 
 const team = [
   {
-    name: "สมชาย รัตนวงศ์",
-    nameEn: "Somchai Rattanawong",
+    name: "ยุทธนา สังข์แก้ว",
+    nameEn: "Yuttana Sangkeaw",
     role: "CEO & Founder",
     roleDesc: "ผู้ก่อตั้งและซีอีโอ",
-    expertise: "15+ ปีในวงการ IT",
+    expertise: "15+ ปีในวงการ Software Retail และ IT Services",
     bg: "bg-gradient-to-br from-gray-100 to-gray-200",
-    initials: "SR",
+    initials: "YS",
   },
   {
-    name: "วิภา อินทรา",
-    nameEn: "Wipa Intra",
-    role: "CTO",
+    name: "นที ภูวงษ",
+    nameEn: "Nathee Phuwong",
+    role: "CTO & Founder & Software Architect",
     roleDesc: "หัวหน้าฝ่ายเทคนิค",
     expertise: "Software Architecture",
     bg: "bg-gradient-to-br from-blue-50 to-blue-100",
-    initials: "WI",
-  },
-  {
-    name: "นพดล ชาญพิจิตร",
-    nameEn: "Noppadon Chanpijit",
-    role: "Head of Infrastructure",
-    roleDesc: "หัวหน้าฝ่าย Infrastructure",
-    expertise: "Network & Server Expert",
-    bg: "bg-gradient-to-br from-gray-100 to-gray-200",
-    initials: "NC",
-  },
-  {
-    name: "สุนิสา เพ็ชรงาม",
-    nameEn: "Sunisa Phetchngam",
-    role: "Lead Developer",
-    roleDesc: "นักพัฒนาอาวุโส",
-    expertise: "Full-Stack Development",
-    bg: "bg-gradient-to-br from-blue-50 to-blue-100",
-    initials: "SP",
-  },
+    initials: "NP",
+  }
 ];
 
 const milestones = [
