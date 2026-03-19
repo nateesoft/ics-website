@@ -1,5 +1,6 @@
 import Link from "next/link";
 import ServiceCard from "@/components/ServiceCard";
+import HeroHeading from "@/components/HeroHeading";
 
 const services = [
   {
@@ -263,6 +264,67 @@ export default function HomePage() {
         {/* Glow */}
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-white/10 rounded-full blur-3xl pointer-events-none" />
 
+        {/* Floating background icons */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
+
+          {/* Server */}
+          <div className="absolute top-[14%] left-[7%] w-14 h-14 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white/50 anim-float-a hidden sm:flex">
+            <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
+            </svg>
+          </div>
+
+          {/* Programmer / Code */}
+          <div className="absolute top-[18%] right-[8%] w-16 h-16 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white/50 anim-float-b hidden sm:flex">
+            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+            </svg>
+          </div>
+
+          {/* POS Terminal */}
+          <div className="absolute top-[52%] left-[5%] w-14 h-14 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white/50 anim-float-c hidden md:flex">
+            <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+            </svg>
+          </div>
+
+          {/* Printer */}
+          <div className="absolute top-[55%] right-[6%] w-14 h-14 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white/50 anim-float-d hidden sm:flex">
+            <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+            </svg>
+          </div>
+
+          {/* Software / App Window */}
+          <div className="absolute bottom-[22%] left-[12%] w-12 h-12 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white/40 anim-float-e hidden md:flex">
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+          </div>
+
+          {/* Network / WiFi */}
+          <div className="absolute bottom-[28%] right-[11%] w-12 h-12 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white/40 anim-float-f hidden md:flex">
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.14 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0" />
+            </svg>
+          </div>
+
+          {/* Database */}
+          <div className="absolute top-[35%] left-[2%] w-10 h-10 rounded-xl bg-white/8 backdrop-blur-sm border border-white/15 flex items-center justify-center text-white/30 anim-float-b hidden lg:flex">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 7v10c0 2 3.134 3 7 3s7-1 7-3V7M4 7c0 2 3.134 3 7 3s7-1 7-3M4 7c0-2 3.134-3 7-3s7 1 7 3" />
+            </svg>
+          </div>
+
+          {/* Cloud Server */}
+          <div className="absolute top-[30%] right-[2%] w-10 h-10 rounded-xl bg-white/8 backdrop-blur-sm border border-white/15 flex items-center justify-center text-white/30 anim-float-e hidden lg:flex">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+            </svg>
+          </div>
+
+        </div>
+
         <div className="relative max-w-6xl mx-auto px-6 py-24 text-center">
           <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm border border-white/20 rounded-full px-4 py-1.5 mb-8">
             <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
@@ -271,13 +333,7 @@ export default function HomePage() {
             </span>
           </div>
 
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white leading-[1.05] tracking-tight mb-6">
-            เทคโนโลยี
-            <br />
-            <span className="text-white/70">ที่ขับเคลื่อน</span>
-            <br />
-            ธุรกิจคุณ
-          </h1>
+          <HeroHeading />
 
           <p className="text-lg sm:text-xl text-white/75 max-w-2xl mx-auto leading-relaxed mb-10">
             ICS คือพาร์ทเนอร์ด้านเทคโนโลยีของคุณ ครอบคลุมตั้งแต่การพัฒนาซอฟต์แวร์
